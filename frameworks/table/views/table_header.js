@@ -23,7 +23,8 @@ SC.TableHeaderView = SC.TableRowView.extend({
       top: 0, bottom: 0, right: 0, width: 15
     },
     ownerBinding: '.parentView',
-    isEnabledBinding: 'owner.isResizable'
+    isEnabledBinding: 'owner.isResizable',
+    isVisibleBinding: '.owner*column.isResizable'
   }),
   
   widthsDidChange: function(object, key, value) {

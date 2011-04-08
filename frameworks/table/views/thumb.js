@@ -23,6 +23,9 @@ Endash.ThumbView = SC.View.extend(
   
   isEnabled: YES,
   isEnabledBindingDefault: SC.Binding.bool(), 
+
+  isVisible: YES,
+  isVisibleBindingDefault: SC.Binding.bool(),
   
   render: function(context, firstTime) {
     if(firstTime)
