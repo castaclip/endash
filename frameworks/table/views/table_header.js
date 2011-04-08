@@ -287,9 +287,6 @@ SC.TableHeaderView = SC.TableRowView.extend({
     var view = $(evt.target).view()[0];
 
     if(this._thumbDragging) {
-      
-      console.log(' end thumb dragging')
-      
       view = this._thumbDragging;
       this._thumbDragging = NO;
       if (!view.get('isEnabled')) return NO ;
