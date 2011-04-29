@@ -32,6 +32,8 @@ SC.TableView = SC.View.extend({
   
   headerCellView: Endash.HeaderCellView,
 
+  dataView: Endash.DataView,
+
   /**
     An array of content objects
     
@@ -316,7 +318,7 @@ SC.TableView = SC.View.extend({
       },
       hasHorizontalScrollerBinding: SC.Binding.from('hasHorizontalScroller', this),
       borderStyle: SC.BORDER_NONE,
-      contentView: Endash.DataView.design({
+      contentView: this.get("dataView").design({
         classNames: ['sc-table-data-view'],
         table: this,
         rowHeight: this.get('rowHeight'),
