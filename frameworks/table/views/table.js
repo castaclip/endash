@@ -318,7 +318,7 @@ SC.TableView = SC.View.extend({
       },
       hasHorizontalScrollerBinding: SC.Binding.from('hasHorizontalScroller', this),
       borderStyle: SC.BORDER_NONE,
-      contentView: this.get("dataView").design({
+      contentView: this.get('dataView').design({
         classNames: ['sc-table-data-view'],
         table: this,
         rowHeight: this.get('rowHeight'),
