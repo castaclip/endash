@@ -338,7 +338,7 @@ SC.TableView = SC.View.extend({
         isSelectable: this.get('isSelectable')
       }),
 
-      autohidesVerticalScroller: NO,
+      autohidesVerticalScroller: YES,
       horizontalScrollOffsetBinding: SC.Binding.from('.horizontalScrollOffset',this),
       
       scrollToVisible: function(view) {
