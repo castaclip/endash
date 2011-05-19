@@ -24,9 +24,13 @@ SC.TableHeaderView = SC.TableRowView.extend({
     isVisibleBinding: '.owner*column.isResizable'
   }),
   
+  verticalScrollerThickness: 0,
+  
   widthsDidChange: function(object, key, value) {
-    var columns = this.get('columns'),
-      width = columns.get('@sum(width)'),
+    var columns = this.get('columns');
+    if(!columns) return;
+    var width = columns.get('@sum(width)'),
+      verticalScrollerThickness = this.get('verticalScrollerThickness'),
       idx;
       
     if(width == this._width && !this._dragging) return;
@@ -39,8 +43,8 @@ SC.TableHeaderView = SC.TableRowView.extend({
     }
     
     this.widthDidChangeForIndex(idx);
-    
-    width = columns.get('@sum(width)');
+
+    width = columns.get('@sum(width)') + verticalScrollerThickness;
     this.set('totalWidth', width);
     this.adjust('minWidth', width);
     this.set('calculatedWidth', width);
