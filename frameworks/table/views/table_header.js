@@ -309,7 +309,7 @@ SC.TableHeaderView = SC.TableRowView.extend({
           view = view.get('parentView');
         }
         
-        if(view) {
+        if(view && view.get('column').get('isSortable')) {
           this.get('table').sortByColumn(view.get('column'), view.get('sortState'));
         }
       }
